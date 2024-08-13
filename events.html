@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <h1>{{ counter }}</h1>
+    <button v-on:click="sum(5, $event)">Plus</button>
+    <p v-on:mousemove="eventXY">Mouse: {{ x }} and {{ y }}</p>
+</div>
+    
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            x: 0,
+            y: 0
+        },
+        methods: {
+            sum(pass, e) {
+                this.counter += pass
+            },
+            eventXY(e) {
+                this.x = event.clientX
+                this.y = event.clientY
+            }
+        }
+    })
+</script>
